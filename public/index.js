@@ -32,7 +32,7 @@ if ($card) {
             const csrf = event.target.dataset.csrf
             fetch('/card/remove/' + id, {
                 method: 'delete',
-                headers: {'X-XSRF-TOKEN': csrf},
+                headers: { 'X-XSRF-TOKEN': csrf },
             }).then(res => res.json())
                 .then(card => {
                     if (card.courses.length) {
@@ -47,7 +47,7 @@ if ($card) {
                                 </tr>
                                 `
                         }).join('')
-                        
+
                         $card.querySelector('tbody').innerHTML = html
                         $card.querySelector('.price').textContent = toCurrency(card.price)
                     } else {

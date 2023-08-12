@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col s6 offset-s3">
         {{#if error}}
-        <p class="alert">{{error}}</p>
+            <p class="alert">{{error}}</p>
         {{/if}}
         <h3>Parolni unutdingizmi?</h3>
         <form action="/auth/reset" method="POST">
@@ -12,6 +12,7 @@
             </div>
 
             <input type="hidden" name="_csrf" value="{{csrf}}">
+            
             <button class="btn btn-primary">Qayta o'rnatish</button>
         </form>
     </div>

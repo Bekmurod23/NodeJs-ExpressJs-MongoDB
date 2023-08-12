@@ -3,7 +3,7 @@ const csrf = require('csurf')
 const flash = require('connect-flash')
 const exphbs = require('express-handlebars')
 const Handlebars = require('handlebars')
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const session = require('express-session')
 const MongoStore = require('connect-mongodb-session')(session)
 const path = require('path')
@@ -72,14 +72,13 @@ const PORT = process.env.PORT || 3000
 async function start() {
     try {
         await mongoose.connect(keys.MONGODB_URI, { useNewUrlParser: true })
-        console.log('Connected to MongoDB...')
+        console.log('Connected to MongoDB')
         app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}!`)
+            console.log(`Server is running on port ${PORT}`)
         })
     } catch (err) {
         console.log(err)
     }
-
 }
 
 start()
